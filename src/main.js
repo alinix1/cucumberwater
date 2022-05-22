@@ -130,11 +130,22 @@ function saveCover() {
   };
 };
 
+function deleteCover(dblclick) {
+  var coverSection = dblclick.currentTarget;
+  var iD = coverSection.dataset.id;
+  for (var i=0; i < savedCovers.length; i++){
+    if (savedCovers[i].id == iD) {
+      savedCovers.splice(i, 1)
+      };
+    };
+    coverSection.remove()
+};
+
 function showSaveCovers() {
   displaySavedCovers();
   var smallCover = '';
   for (var i = 0; i < savedCovers.length; i++) {
-    smallCover = smallCover + `<section class="mini-cover">
+    smallCover = smallCover + `<section class="mini-cover" data-id="${savedCovers[i].id}">
         <img class="overlay" src="./assets/overlay.png">
         <img class="cover-image" src="${savedCovers[i].cover}">
         <h2 class="cover-title">${savedCovers[i].title}</h2>
@@ -143,6 +154,15 @@ function showSaveCovers() {
       </section>`
   };
   saveCoverSection.innerHTML = smallCover;
+
+  var allSavedCovers = document.querySelectorAll('.mini-cover');
+
+  for (var i = 0; i < allSavedCovers.length; i++){
+  allSavedCovers[i].addEventListener('dblclick', deleteCover)
+
+  }
+
+
 };
 
 // We've provided one function to get you started

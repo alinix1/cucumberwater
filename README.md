@@ -29,7 +29,6 @@ https://alinix1.github.io/cucumberwater/
 
 <img width="921" alt="Screen Shot 2022-05-22 at 2 56 01 PM" src="https://user-images.githubusercontent.com/28677929/169715596-3822fefa-1410-4053-a37c-bdb2b1e4ffce.png">
 
-
 ## Technologies Used
 * JavaScript
 * HTML
